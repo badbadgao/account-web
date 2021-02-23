@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles'
 import DataPage from 'components/DataPage';
 import AccountValueSummary from 'components/AccountValueSummary';
@@ -10,7 +9,7 @@ const useStyles = makeStyles({
     height: '100vh',
     backgroundColor: '#dcdcdc',
   },
-  log: {
+  dataPage: {
     width: '40%',
   },
   summary: {
@@ -22,7 +21,7 @@ const App = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <div className={classes.log}>
+      <div className={classes.dataPage}>
         <DataPage />
       </div>
       <div className={classes.summary}>

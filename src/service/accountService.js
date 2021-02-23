@@ -22,10 +22,6 @@ const getRevenueTotalValue = (accountRecordsData = data) => {
  * The fommatted sum of the total_value of the account records where the account_category field is set to revenue
  */
 export const getRevenue = (accountRecordsData = data) => {
-  const filter = {
-    'account_category': [REVENUE],
-  };
-
   const totalRevenue = getRevenueTotalValue(accountRecordsData);
 
   return formattedValue(totalRevenue, 'Revenue');
@@ -46,11 +42,7 @@ export const getExpensesTotalValue = (accountRecordsData = data) => {
  * The formatted sum of the total_value of the account records where the account_category field is set to expense
  */
 export const getExpenses = (accountRecordsData = data) => {
-  const filter = {
-    'account_category': [EXPENSE],
-  };
-
-  const totalExpenses = getExpensesTotalValue(accountRecordsData, filter);
+  const totalExpenses = getExpensesTotalValue(accountRecordsData);
   return formattedValue(totalExpenses, 'Expenses');
 }
 
@@ -72,11 +64,6 @@ export const getGrossProfitMargin = (accountRecordsData = data, revenue) => {
   return formattedPercentage(grossProfiMargin, 'Gross Profit Margin');
 }
 
-/**
- * Get the net profit margin
- * @param {*} expense the default expense if given
- * @param {*} revenue the default revenue if given
- */
 /**
  * 
  * Get the net profit margin

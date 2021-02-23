@@ -19,7 +19,7 @@ const useStyles = makeStyles({
   }
 });
 
-const LogSummary = () => {
+const ValueSummary = () => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
@@ -33,4 +33,4 @@ const LogSummary = () => {
   )
 };
 
-export default LogSummary;
+export default ValueSummary;

@@ -21,7 +21,7 @@ const useStyles = makeStyles({
   }
 });
 
-const LogHistory = () => {
+const DataPage = () => {
   const classes = useStyles();
 
   return (
@@ -36,4 +36,4 @@ const LogHistory = () => {
   )
 };
 
-export default LogHistory;
+export default DataPage;
