@@ -29,42 +29,98 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+# 9Spokes Coding Challenge
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Overview
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+This repo contains the instructions and the data you need to complete the _9Spokes coding challenge_.  This challenge is not intended to be complex, but it is an opportunity for you to showcase your understanding and applying of good development practices.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+You are encouraged to treat this as a real-life project.  This typically means:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+- Use version control effectively
+- Include some basic documentation
+- Include some unit tests
+- Use a naming convention
 
-## Learn More
+You are free to use any programming language you'd like.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## The Challenge
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+You are tasked with developing an application that performs the following tasks in sequence:
 
-### Code Splitting
+- Read and parse an external data file `data.json` (located in this repo)
+- Using this data, calculate and print the values of 5 common accounting metrics:
+  1. Revenue
+  2. Expenses
+  3. Gross Profit Margin
+  4. Net Profit Margin
+  5. Working Capital Ratio
+- Commit your changes, and upload all your work to a feature branch of your choice.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Instructions
 
-### Analyzing the Bundle Size
+- Begin by _forking_ the current repository to your own `github.com` account
+- Clone the repo locally
+- Write your code, commit often
+- Once you are satisfied with the output, push your changes to your `github.com` account
+- Share the link
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Calculations
 
-### Making a Progressive Web App
+Use the formulas below to calculate your values:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Revenue
 
-### Advanced Configuration
+This should be calculated by adding up all the values under `total_value` where the `account_category` field is set to `revenue`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Expenses
 
-### Deployment
+This should be calculated by adding up all the values under `total_value` where the `account_category` field is set to `expense`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Gross Profit Margin
 
-### `yarn build` fails to minify
+This is calculated in two steps: first by adding all the `total_value` fields where the `account_type` is set to `sales` and the `value_type` is set to `debit`; then dividing that by the `revenue` value calculated earlier to generate a percentage value.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Net Profit Margin
+
+This metric is calculated by subtracting the `expenses` value from the `revenue` value and dividing the remainder by `revenue` to calculate a percentage.
+
+### Working Capital Ratio
+
+This is calculated dividing the `assets` by the `liabilities` creating a percentage value where `assets` are calculated by:
+
+- adding the `total_value` from all records where the `account_category` is set to `assets`, the `value_type` is set to `debit`, and the `account_type` is one of `current`, `bank`, or `current_accounts_receivable`
+- subtracting the `total_value` from all records where the `account_category` is set to `assets`, the `value_type` is set to `credit`, and the `account_type` is one of `current`, `bank`, or `current_accounts_receivable`
+
+and liabilities are calculated by:
+
+- adding the `total_value` from all records where the `account_category` is set to `liability`, the `value_type` is set to `credit`, and the `account_type` is one of `current` or `current_accounts_payable`
+- subtracting the `total_value` from all records where the `account_category` is set to `liability`, the `value_type` is set to `debit`, and the `account_type` is one `current` or `current_accounts_payable`
+
+## Formatting
+
+All currency figures must be formatted as follows:
+- The value is prefixed with a `$` sign
+- A comma is used to separate every 3 digits in the thousands, millions, billions, and trillions
+- Cents are removed
+
+All percentage values must be formatted to one decimal digit and be prefixed with a `%` sign.  Don't forget to multiply by 100 each time you're tasked with calculating a percentage value.
+
+## Example
+
+Below is what a typical output should look like.  Please note this is *not* the output of the challenge but a mere example.
+
+```
+$ ./myChallenge
+Revenue: $519,169
+Expenses: $411,664
+Gross Profit Margin: 22%
+Net Profit Margin: 21%
+Working Capital Ratio: 95%
+```
+
+# Dependencies
+
+If your program requires a special way to compile or a specific version of a toolset, please be sure to include that in your running instructions.
+
+__Thank you and good luck!__
