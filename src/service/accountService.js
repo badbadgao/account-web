@@ -84,7 +84,7 @@ export const getGrossProfitMargin = (accountRecordsData = data, revenue) => {
  * @param {*} expense the default expense if given
  * @param {*} revenue the default revenue if given
  */
-export const getNetProfitMargin = (accountRecordsData, expense, revenue) => {
+export const getNetProfitMargin = (accountRecordsData = data, expense, revenue) => {
   const expenseTotalValue = expense || getExpensesTotalValue(accountRecordsData);
   const revenueTotalValue = revenue || getRevenueTotalValue(accountRecordsData);
   const netProfitMargin = (revenueTotalValue - expenseTotalValue) / revenueTotalValue;
