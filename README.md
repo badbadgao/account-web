@@ -19,15 +19,15 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `yarn build`
+## Assumption made for this code exercise
+- The given data object contains valid records. The total revenue value and liabilities will never be zero. Otherwise that may cause math division exception.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Libraries used
+- react - a JavaScript library for building user interfaces.
+- lodash - a JavaScript library which provides utility functions for common programming tasks using the functional programming paradigm.
+- @material-ui/core - React components for faster and easier web development. Build your own design system, or start with Material Design.
+- numeral - a javascript library for formatting and manipulating numbers.
+- react-json-pretty - a lightweight and tiny react component that helps you to format and prettify the JSON data.
 
 # 9Spokes Coding Challenge
 
