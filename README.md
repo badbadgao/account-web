@@ -1,11 +1,15 @@
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Environment set up
+- To run this web app, nodejs and yarn are required
 
 ## Available Scripts
 
 In the project directory, you can run:
 
+### `yarn`
+and then
 ### `yarn start`
 
 Runs the app in the development mode.\
@@ -19,12 +23,12 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## Assumption made for this code exercise
-- The given data object contains valid records. The total revenue value and liabilities will never be zero. Otherwise that may cause math division exception.
+## Assumption made for this coding exercise
+- The given data object contains valid records. The total revenue value and liabilities will never be zero. Otherwise, that may cause math division exceptions.
 
 ## Libraries used
 - react - a JavaScript library for building user interfaces.
-- lodash - a JavaScript library which provides utility functions for common programming tasks using the functional programming paradigm.
+- lodash - a JavaScript library that provides utility functions for common programming tasks using the functional programming paradigm.
 - @material-ui/core - React components for faster and easier web development. Build your own design system, or start with Material Design.
 - numeral - a javascript library for formatting and manipulating numbers.
 - react-json-pretty - a lightweight and tiny react component that helps you to format and prettify the JSON data.
